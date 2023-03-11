@@ -10,7 +10,7 @@ import { LandingModule } from '../landing/landing.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'celulatd_database',
+      database: 'ctd_celula',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: false,
       retryDelay: 3000,

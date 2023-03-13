@@ -22,14 +22,17 @@ CREATE TABLE videos (
   duracion INT NOT NULL,
   fecha_publicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   ruta_archivo VARCHAR(255) NOT NULL,
-  ussuario_id INT NOT NULL REFERENCES usuarios(id)
+  ussuario_id INT NOT NULL REFERENCES usuario(id)
   
 );
-
+INSERT INTO videos(
+  titulo,descripcion,duracion,ruta_archivo, ussuario_id)
+   values('titanic','barco que se hunde en medio del atlantico polar',255, 'http://video.com', 4
+  );
 -- Crear tabla "favoritos"
 CREATE TABLE favoritos (
   id SERIAL PRIMARY KEY,
-  usuario_id INT NOT NULL REFERENCES usuarios(id),
+  usuario_id INT NOT NULL REFERENCES usuario(id),
   video_id INT NOT NULL REFERENCES videos(id),
   fecha_agregado TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -37,7 +40,7 @@ CREATE TABLE favoritos (
 -- Crear tabla "vistas"
 CREATE TABLE vistas (
   id SERIAL PRIMARY KEY,
-  usuario_id INT NOT NULL REFERENCES usuarios(id),
+  usuario_id INT NOT NULL REFERENCES usuario(id),
   video_id INT NOT NULL REFERENCES videos(id),
   fecha_vista TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -45,7 +48,7 @@ CREATE TABLE vistas (
 -- Crear tabla "notificaciones"
 CREATE TABLE notificaciones (
   id SERIAL PRIMARY KEY,
-  usuario_id INT NOT NULL REFERENCES usuarios(id),
+  usuario_id INT NOT NULL REFERENCES usuario(id),
   mensaje TEXT,
   leido BOOLEAN DEFAULT false,
   fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -62,4 +65,4 @@ id SERIAL PRIMARY KEY,
 nombre VARCHAR(25) NOT NULL,
 usuario_id INT NOT NULL,
 number_click INT,
-FOREIGN KEY (usuario_id) REFERENCES usuarios(id));
+FOREIGN KEY (usuario_id) REFERENCES usuario(id));

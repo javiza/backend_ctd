@@ -10,12 +10,12 @@ export class Vistas {
   id: number;
 
   @OneToOne(() => Usuario)
-  @JoinColumn({ name: 'ussuario_id' })
+  @JoinColumn({ name: 'usuario_id' })
   usuario: Usuario;
   
   @OneToOne(() => Videos)
   @JoinColumn({ name: 'videos_id' })
-  videos: Videos;
+  video: Videos;
 
   @Column()
   fecha_vista: string;

@@ -11,7 +11,7 @@ import { ApiModule } from './api/api.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'test2',
+      database: 'test7',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,

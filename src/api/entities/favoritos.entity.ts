@@ -12,9 +12,9 @@ export class Favoritos {
   @ManyToOne(() => Usuario, usuario => usuario.favoritos)
   usuario: Usuario;
 
+  @ManyToOne(() => Videos, videos => videos.favoritos)
+  video: Videos;
+
   @Column()
   fecha_agregado: string;
-
-  @ManyToOne(() => Videos, videos => videos.favoritos)
-  videos: Videos;
 }

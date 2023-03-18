@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ApiModule } from './api/api.module';
+import { RegisterModule } from './registerUser/registerUser.module';
 
 
 @Module({
@@ -11,13 +12,14 @@ import { ApiModule } from './api/api.module';
       port: 5432,
       username: 'jona',
       password: '1234',
-      database: 'test7',
+      database: 'test8',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
       retryDelay: 3000,
       retryAttempts: 10,
     }),
     ApiModule,
+    RegisterModule
 
   ],
   controllers: [],

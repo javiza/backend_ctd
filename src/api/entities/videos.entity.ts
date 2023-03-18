@@ -7,6 +7,7 @@ import {
   ManyToMany,
   JoinTable,
   ManyToOne,
+  OneToMany,
 } from 'typeorm';
 import { Usuario } from './usuario.entity';
 import { Vistas } from './vistas.entity';
@@ -42,7 +43,8 @@ export class Videos {
   vistas: Vistas;
 
   @OneToMany(() => Vistas, (vistas) => vistas.usuario)
-  vistas: Vistas[];
+  vista: Vistas[];
+  favoritos: any;
   
 
 }
